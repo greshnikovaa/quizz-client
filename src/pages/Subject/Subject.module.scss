@@ -1,0 +1,76 @@
+.mein {
+    color: white;
+    text-align: center;
+    padding: 20px 50px;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .verh {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1{
+            padding-left: 47%;
+        }
+        .button {
+            border: none;
+            padding: 5px 40px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 90px;
+        }
+        .btns{
+            display: flex;
+            gap: 20px;
+            .btn {
+                border: none;
+                padding: 5px 40px;
+                font-size: 20px;
+                cursor: pointer;
+                border-radius: 90px;
+            }
+        }
+    }
+
+    .list {
+        display: grid;
+        list-style: none;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        gap: 10px;
+        .theme,
+        .btn_add {
+            border-radius: 10px;
+            cursor: pointer;
+            padding: 30px 15px;
+        }
+
+        .btn_add {
+            background-color: rgba(0, 0, 0, 0.232);
+            font-size: 30px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .theme{
+            position: relative;
+            .redact{
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                justify-content: space-around;
+                padding: 5px 10px;
+                i{
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}

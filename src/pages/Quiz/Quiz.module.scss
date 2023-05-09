@@ -1,0 +1,68 @@
+.main{
+    .top{
+        height: 45vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        color: white;
+        h1{
+            padding:0;
+            margin: 0;
+            
+            font-weight: 800;
+            font-size: 2.5rem;
+        }
+    }
+    
+    .bottom{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        height: 55vh;
+        padding: 0 1rem 1rem 1rem;
+        .card{
+            height: 100%;
+            background-color: rgb(145, 200, 248);
+            border-radius: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 3px solid transparent;
+            p{
+                padding: 0;
+                margin: 0;
+                font-weight: 600;
+                font-size: 1.5rem;
+            }
+            
+        }
+        .card.red{
+            background-color: rgb(243, 88, 85);
+        }
+        .card.green{
+            background-color: rgb(5, 159, 5);
+        }
+        .card.yellow{
+            background-color: rgb(248, 216, 57);
+        }
+        .card:hover{
+            border: 3px solid white;
+        }
+        .card.blue:hover{
+            background: radial-gradient(circle, rgba(145,200,248,1) 6%, rgba(99,178,247,1) 100%);
+        }
+        .card.red:hover{
+            background: radial-gradient(circle, rgba(243,88,85,1) 6%, rgba(240,39,35,1) 100%);
+        }
+        .card.green:hover{
+            background: radial-gradient(circle, rgba(5,159,5,1) 0%, rgba(4,123,4,1) 100%);
+        }
+        .card.yellow:hover{
+            background: radial-gradient(circle, rgba(248,216,57,1) 0%, rgba(236,197,6,1) 100%);
+        }
+
+    }
+}
