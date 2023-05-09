@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import s from './Quiz.module.scss'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
@@ -15,6 +15,12 @@ const Quiz = () => {
     const [alertMess, setAlertMess] = useState(null)
     const [uncorrect, setUncorrect] = useState(0)
     const [finish, setFinish] = useState(false)
+    const getQuestion = useCallback((dataQuizzes) => {  //функция рандома вопроса
+        const data = dataQuizzes || quizzes
+        const index = Math.floor(Math.random() * data.length)
+        setQuiz({ ...data[index], index: index })
+        // console.log({...data[index], index:index})
+    }, [quizzes])
     useEffect(() => {
         axios.get(API_URL + 'api/quizz/' + id)
             .then((res) => {
@@ -25,7 +31,7 @@ const Quiz = () => {
             .catch((err) => {
                 console.log(err)
             })
-    }, [id])
+    }, [id, getQuestion]) 
     const colors = ['blue', 'green', 'red', 'yellow']
 
     useEffect(() => {
@@ -34,12 +40,7 @@ const Quiz = () => {
         }
     }, [finish, navigate, alertMess])
 
-    const getQuestion = (dataQuizzes) => {  //функция рандома вопроса
-        const data = dataQuizzes || quizzes
-        const index = Math.floor(Math.random() * data.length)
-        setQuiz({ ...data[index], index: index })
-        // console.log({...data[index], index:index})
-    }
+    
     const changeAnswer = (index) => {
 
         if (quiz.correct === index) {  //проверка правильный ли ответ
